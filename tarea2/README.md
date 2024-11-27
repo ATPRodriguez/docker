@@ -97,8 +97,7 @@ docker logs tomcat-server
   <img src="../img/tarea2/Paso4-2.png" alt="Paso4-2.png"/>
 
 **Verifica además que no hubieran conflicto de puertos:**
-> [!IMPORTANT]  
-> El comando puede dar salida 1 si no se ha cerrado la pagina de localhost pero dará 0 una vez cerrada la pagina
+> :memo: **IMPORTANTE**: El comando puede dar salida 1 si no se ha cerrado la pagina de localhost pero dará 0 una vez cerrada la pagina
 
 ```bash
 lsof -i :9090 ; echo $?
