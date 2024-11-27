@@ -1,7 +1,7 @@
 <div align="center">
 
 # **Tarea 1 | Docker**
-<img src="./img/docker-logo.png" alt="logo-docker.png"/>
+<img src="../img/docker-logo.png" alt="logo-docker.png"/>
 
 </div>
 
@@ -23,7 +23,7 @@ ___
 ```
 
 **Salida:**    
-<img src="./img/Paso1.png" alt="paso1.png"/>
+<img src="../img/tarea1/Paso1.png" alt="paso1.png"/>
 
 ### ***Paso 2 - Administrar contenedores de Docker*** <a name="2"></a>
 ***Después de usar Docker durante un tiempo, tendrá muchos contenedores activos (en ejecución) e inactivos en su computadora. Para ver los activos, utilice lo siguiente:***
@@ -35,7 +35,7 @@ ___
 
 
 **Salida:**   
-<img src="./img/Paso2-1.png" alt="Paso2-1.png"/>   
+<img src="../img/tarea1/Paso2-1.png" alt="Paso2-1.png"/>   
 
 *docker ps -a*: Lista **todos** los **contenedores**
 ```bash 
@@ -43,7 +43,7 @@ ___
 ```
 
 **Salida:**   
-<img src="./img/Paso2-2.png" alt="Paso2-2.png"/>
+<img src="../img/tarea1/Paso2-2.png" alt="Paso2-2.png"/>
 
 *docker ps -l*: Lista el **último contenedor** 
 ```bash 
@@ -51,7 +51,7 @@ ___
 ```
 
 **Salida:**   
-<img src="./img/Paso2-3.png" alt="Paso2-3.png"/>
+<img src="../img/tarea1/Paso2-3.png" alt="Paso2-3.png"/>
 
 *docker images*: Lista las **imágenes** docker
 ```bash 
@@ -59,6 +59,6 @@ ___
 ```
 
 **Salida:**   
-<img src="./img/Paso2-4.png" alt="Paso2-4.png"/>
+<img src="../img/tarea1/Paso2-4.png" alt="Paso2-4.png"/>
 
 </div>
