@@ -81,8 +81,7 @@ docker ps
 ### Paso 4 - Probar la configuración <a name="4"></a>
 - 1: ***Abre un navegador web y accede a la dirección:***  
 
-> [!IMPORTANT]  
-> Si utilizas Docker en un servidor remoto, reemplaza localhost con la dirección IP del servidor.
+> :memo: **IMPORTANTE**:Si utilizas Docker en un servidor remoto, reemplaza localhost con la dirección IP del servidor.
 
   <img src="../img/tarea2/Paso4-1.png" alt="Paso4-1.png"/>   
 
