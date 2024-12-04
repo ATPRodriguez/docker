@@ -341,6 +341,29 @@ CloudBeaver permite encontrar las BBDD que esten dentro de su red.
 
 > :memo: **IMPORTANTE**: Es posible que con localhost no encuentre nada, si es asi en vez de localhost podemos escribir la **IPAddress** que vemos al final de ```docker inspect mariadb-container```
 
+<img src="../img/tarea4/Paso4-1.png" alt="Paso4-1.png"/>
 
+### Paso 5 - Conectar CloudBeaver a MariaDB
+Desde la interfaz de CloudBeaver, selecciona New Connection (Nueva conexión).
+Selecciona MariaDB/MySQL como tipo de base de datos.
+Introduce los datos de conexión: Host: ip -> 192.168.....
+Puerto: 3306 (el puerto configurado para MariaDB).
+Usuario: root (u otro usuario configurado).
+Contraseña: admin (o la contraseña configurada para el usuario).
+Base de datos: exampledb *(u otra base de datos que hayas configurado).
+
+<img src="../img/tarea4/Paso5-1.png" alt="Paso5-1.png"/>
+
+### Paso 6 - Detener y eliminar contenedores
+Cuando termines de trabajar con CloudBeaver/MariaBD, puedes detener y eliminar el contenedor con los siguientes comandos:
+
+- Parar el contenedor
+```bash
+docker stop <nombre-contenedor>
+```
+- Eliminar el contenedor
+```bash
+docker rm <nombre-contenedor>
+```
 
 </div
