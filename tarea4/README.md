@@ -10,6 +10,12 @@
 
 ## Indice
 - [Paso 1](#1)
+- [Paso 2](#2)
+- [Paso 3](#3)
+- [Paso 4](#4)
+- [Paso 5](#5)
+- [Paso 6](#6)
+
 ___
 
 ## **Objetivo - Instalacion y Configuracion de MariaDB.**
@@ -304,7 +310,7 @@ docker run --name mariadb-container -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_DATABA
 
     ```
 
-### Paso 2 - Descargar un cliente de base de datos para MariaDB (Adminer)
+### Paso 2 - Descargar un cliente de base de datos para MariaDB (Adminer) <a name="2"></a>
 En primer lugar debemos de encontrar un cliente de bbdd que este en docker. Uno de ellos, con una buena interfaz gráfica es CloudBeaver.
 
 - **1**: Descargar y ejecutar CloudBeaver en Docker.   
@@ -325,7 +331,7 @@ En primer lugar debemos de encontrar un cliente de bbdd que este en docker. Uno 
     **Salida**: 
     <img src="../img/tarea4/Paso2-2.png" alt="Paso2-2.png"/>
     
-### Paso 3 - Acceder a la interfaz de CloudBeaver
+### Paso 3 - Acceder a la interfaz de CloudBeaver <a name="3"></a>
 
 - Abre un navegador web.
 - Navega a la dirección http://localhost:8978.
@@ -334,7 +340,7 @@ En primer lugar debemos de encontrar un cliente de bbdd que este en docker. Uno 
 <img src="../img/tarea4/Paso3-1.png" alt="Paso3-1.png"/>
 
 
-### Paso 4 - Encontrar la BBDD
+### Paso 4 - Encontrar la BBDD <a name="4"></a>
 CloudBeaver permite encontrar las BBDD que esten dentro de su red.
 - \+ -> Find DataBase.
 - En el buscador escribe localhost.
@@ -343,7 +349,7 @@ CloudBeaver permite encontrar las BBDD que esten dentro de su red.
 
 <img src="../img/tarea4/Paso4-1.png" alt="Paso4-1.png"/>
 
-### Paso 5 - Conectar CloudBeaver a MariaDB
+### Paso 5 - Conectar CloudBeaver a MariaDB <a name="5"></a>
 Desde la interfaz de CloudBeaver, selecciona New Connection (Nueva conexión).
 Selecciona MariaDB/MySQL como tipo de base de datos.
 Introduce los datos de conexión: Host: ip -> 192.168.....
@@ -354,7 +360,7 @@ Base de datos: exampledb *(u otra base de datos que hayas configurado).
 
 <img src="../img/tarea4/Paso5-1.png" alt="Paso5-1.png"/>
 
-### Paso 6 - Detener y eliminar contenedores
+### Paso 6 - Detener y eliminar contenedores <a name="6"></a>
 Cuando termines de trabajar con CloudBeaver/MariaBD, puedes detener y eliminar el contenedor con los siguientes comandos:
 
 - Parar el contenedor
