@@ -10,6 +10,10 @@
 
 ## Indice
 - [Paso 1](#1)
+- [Paso 1](#2)
+- [Paso 1](#3)
+- [Paso 1](#4)
+- [Paso 1](#5)
 
 ___
 
@@ -30,7 +34,7 @@ Docker necesita una red personalizada para que los contenedores puedan comunicar
 docker network create tomcat-network
 ```
 
-### Paso 2 - Levanta los Servidores Tomcat
+### Paso 2 - Levanta los Servidores Tomcat <a name="2"></a>
 Levanta dos contenedores Tomcat y conéctalos a la red tomcat-network.
 
 - Servidor Tomcat 1
@@ -42,7 +46,7 @@ docker run -d --name tomcat1 --network tomcat-network -p 8081:8080 tomcat:latest
 docker run -d --name tomcat2 --network tomcat-network -p 8082:8080 tomcat:latest
 ```
 
-### Paso 3 - Muestra los contenedores dockers activos en ese momento
+### Paso 3 - Muestra los contenedores dockers activos en ese momento <a name="3"></a>
 Muestra el listado de contenedores docker que tienes activos y todos los que tienes disponibles.
 
 ```bash
@@ -52,7 +56,7 @@ docker ps
 **Salida:**
 <img src="../img/tarea5/Paso3-1.png" alt="Paso3-1.png"/>
 
-### Paso 4 - Fichero de Configuración del Balanceador NGINX
+### Paso 4 - Fichero de Configuración del Balanceador NGINX <a name="4"></a>
 Crea el fichero de balance nginx.conf en el mismo direcctorio donde estes ejecutando la consola de comandos.
 
 ```bash
@@ -81,7 +85,7 @@ http {
 docker run -d --name nginx --network tomcat-network -p 8080:80 -v ./nginx.conf:/etc/nginx/nginx.conf nginx:latest
 ```
 
-### Paso 5 - Verificar que todo esta funcionando correctamente
+### Paso 5 - Verificar que todo esta funcionando correctamente <a name="5"></a>
 Servidor NGINX
 Verifica el comportamiento en:   
 ```http://localhost:8081```   
