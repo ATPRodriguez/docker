@@ -10,6 +10,12 @@
 
 ## Indice
 - [Paso 1](#1)
+- [Paso 2](#2)
+- [Paso 3](#3)
+- [Paso 4](#4)
+- [Paso 5](#5)
+- [Paso 6](#6)
+- [Paso 7](#7)
 
 ___
 
@@ -110,7 +116,115 @@ Acceder al Cliente Mongo Express Abre tu navegador y visita ```localhost:8081```
 ### Paso 7 - Prueba la persistencia de BBDD <a name="7"></a>
 Accede a MongoDB desde el Cliente Crea una nueva base de datos llamada testdb.
 
+**Crear la Colección users**
 
+Una vez dentro de la base de datos (por ejemplo, exampledb):
 
+Haz clic en el botón Create.
+Collection (Crear colección). Escribe el nombre de la colección, por ejemplo: users. Haz clic en Create (Crear).
+
+**Añadir Documentos a la Colección users**
+
+Abre la colección users.
+Haz clic en Add Document (Añadir documento).
+Escribe un documento JSON, por ejemplo:
+
+**Verificación**  
+- Visualmente 
+<img src="../img/tarea6/Paso7.png" alt="Paso7.png"/>
+
+- Red
+```bash
+docker network inspect mongodb-network
+```
+
+**Salida:**   
+```bash
+[
+    {
+        "Name": "mongodb-network",
+        "Id": "22222329fe81c8d9882495c01b365fa91efcd0bd6785b757ff17c4b207d514f9",
+        "Created": "2024-12-05T15:16:33.078142512Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "172.19.0.0/16",
+                    "Gateway": "172.19.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {
+            "09325f4d1263e454df5168b045eb3af563ca611460db11a6094c4c79951b5b23": {
+                "Name": "mongo-express-container",
+                "EndpointID": "8ba93eacd1b30a5276aa972c962a7f82b727bc88d0d91ee5638868ebf75f19ca",
+                "MacAddress": "02:42:ac:13:00:03",
+                "IPv4Address": "172.19.0.3/16",
+                "IPv6Address": ""
+            },
+            "dd7177d8c9747ccdea1831529fedb2fab0fa76b1d061ab2267306e8a29bf10d5": {
+                "Name": "mongodb-container",
+                "EndpointID": "6982c793f4e83cb9443de298c6a2028ce62ad57a29a852f13a7e3cd55a19f54d",
+                "MacAddress": "02:42:ac:13:00:02",
+                "IPv4Address": "172.19.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Options": {},
+        "Labels": {}
+    }
+]
+```
+
+**Conectividad con la BBDD**
+Realiza la verificación con la BBDD. Lanza el siguiente comando:
+```bash
+docker exec -it mongodb-container mongosh -u admin -p admin123
+```
+Utiliza la bbdd testdb:
+```bash
+use testdb
+```
+Lista las colecciones que tienes disponibles:
+```bash
+show collections
+```
+Añade un nuevo documento a la colección:
+```bash
+db.users.insertOne({
+    name: "Pepe",
+    email: "quiero-ser-como-pepe@example.com",
+    age: 65
+})
+```
+Muestra los valores almacenados:
+```bash
+db.users.find()
+```
+
+**Salida:**   
+<img src="../img/tarea6/Paso7-3.png" alt="Paso7-3.png"/>
+
+> :memo: La forma de salir es ejecutando exit.
+
+### Detener y eliminar contenedores
+```bash
+docker stop mongodb-container
+docker stop mongo-express-container
+
+docker rm mongodb-container
+docker rm mongo-express-container
+```
 
 </div>
